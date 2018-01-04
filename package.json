@@ -1,0 +1,31 @@
+{
+  "name": "gh-getrepo",
+  "version": "1.0.0",
+  "description": "A cli tool to search for a github repository url",
+  "main": "index.js",
+  "bin": {
+    "gh-getrepo": "./index.js"
+  },
+  "dependencies": {
+    "github-search-repos": "^3.0.0",
+    "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "repo",
+    "search"
+  ],
+  "author": "Payton Swick <payton@foolord.com>",
+  "license": "MIT"
+}
