@@ -31,23 +31,19 @@ function getItemString (item) {
   return `${item.name} ${item.url}`
 }
 
-function getItemJson (item) {
-  return JSON.stringify(item)
-}
-
-function formatItemForOutput (item, format) {
+function outputItemsForFormat (items, format) {
   switch (format) {
     case 'json':
-      return getItemJson(item)
+      return console.log(JSON.stringify(items))
     case 'default':
-      return getItemString(item)
+      return items.map(item => console.log(getItemString(item)))
   }
   console.error(`Unrecognized format '${format}'`)
   process.exit(1)
 }
 
 function getOutputter (format) {
-  return item => console.log(formatItemForOutput(item, format))
+  return items => outputItemsForFormat(items, format)
 }
 
 function buildSearchPreamble (additions) {
@@ -62,7 +58,7 @@ if (searchString.length < 1) {
 }
 const searchPreamble = searchAdditions.length > 0 ? buildSearchPreamble(searchAdditions) : ''
 const fullSearchTerm = searchPreamble + searchString
-const outputItem = getOutputter(outputFormat)
+const outputData = getOutputter(outputFormat)
 githubSearchRepos(fullSearchTerm)
   .then(data => data.items.map(getItemData))
-  .then(items => items.map(outputItem))
+  .then(outputData)
