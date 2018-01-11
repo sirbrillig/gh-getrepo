@@ -31,8 +31,23 @@ function getItemString (item) {
   return `${item.name} ${item.url}`
 }
 
+function getItemsForAlfred (items) {
+  return items.map(item => {
+    return {
+      uid: item.url,
+      title: item.name,
+      subtitle: item.url,
+      arg: item.url,
+      autocomplete: item.name,
+      text: item.url
+    }
+  })
+}
+
 function outputItemsForFormat (items, format) {
   switch (format) {
+    case 'alfred':
+      return console.log(JSON.stringify({items: getItemsForAlfred(items)}))
     case 'json':
       return console.log(JSON.stringify(items))
     case 'default':
