@@ -3,7 +3,7 @@ A cli tool to search for a github repository url
 ## Installation
 
 ```
-npm install --global gh-getrepo
+npm install --global @sirbrillig/gh-getrepo
 ```
 
 

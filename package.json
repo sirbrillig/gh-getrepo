@@ -1,5 +1,5 @@
 {
-  "name": "gh-getrepo",
+  "name": "@sirbrillig/gh-getrepo",
   "version": "1.0.0",
   "description": "A cli tool to search for a github repository url",
   "main": "index.js",
