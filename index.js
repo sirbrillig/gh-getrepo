@@ -6,7 +6,7 @@ const options = yargs
   .alias('h', 'help')
   .usage('Usage: $0 [options] <search-term>')
   .alias('f', 'format')
-  .describe('format', 'Output format (default, json)')
+  .describe('format', 'Output format (default, json, alfred)')
   .string('format')
   .describe('org', 'A org name to restrict the search')
   .string('org')
