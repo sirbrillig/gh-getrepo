@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 const githubSearchRepos = require('github-search-repos')
+const chalk = require('chalk')
 const yargs = require('yargs')
 const options = yargs
   .alias('h', 'help')
@@ -28,7 +29,7 @@ function getItemData (item) {
 }
 
 function getItemString (item) {
-  return `${item.name} ${item.url}`
+  return `${chalk.blue(item.name)} ${item.url}`
 }
 
 function getItemsForAlfred (items) {
