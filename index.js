@@ -75,6 +75,8 @@ if (searchString.length < 1) {
 const searchPreamble = searchAdditions.length > 0 ? buildSearchPreamble(searchAdditions) : ''
 const fullSearchTerm = searchPreamble + searchString
 const outputData = getOutputter(outputFormat)
-githubSearchRepos(fullSearchTerm)
+const token = process.env.GH_GETREPO_TOKEN || null
+const searchOptions = { token }
+githubSearchRepos(fullSearchTerm, searchOptions)
   .then(data => data.items.map(getItemData))
   .then(outputData)
